@@ -14,7 +14,7 @@ This template uses stable and well-supported build tools...
 - Microsoft's official TSC TypeScript Compiler
 - Babel's official JSX Transform
 - Facebook's official `react-refresh/babel` plugin for HMR.
-- Webpack Dev Server for local developpment.
+- Webpack Dev Server for local development.
 - Google's ZX for the build scripts
 
 I tried to make this template as small as possible while still maintaing modularity (not using
