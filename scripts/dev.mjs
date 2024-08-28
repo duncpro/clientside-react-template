@@ -4,10 +4,10 @@
 $.verbose = true;
 
 // Perform an initial compilation before starting the Webpack development server.
-await $`STAGE=development ./compile.mjs`;
+await $`STAGE=development ./scripts/compile.mjs`;
 
 // Start a background process which recompiles for every change in the source set.
-$`watchexec -w src STAGE=development ./compile.mjs`;
+$`watchexec -w src STAGE=development ./scripts/compile.mjs`;
 
 // Start the Webpack development server.
 $`STAGE=development npx webpack serve`;

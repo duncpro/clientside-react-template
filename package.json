@@ -20,7 +20,7 @@
     "react-dom": "^18.3.1"
   },
   "scripts": {
-    "build": "./build.mjs",
-    "dev": "./dev.mjs"
+    "build": "./scripts/build.mjs",
+    "dev": "./scripts/dev.mjs"
   }
 }

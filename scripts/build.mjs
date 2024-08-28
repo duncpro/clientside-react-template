@@ -6,5 +6,5 @@
 // We'd like to be shown the stdout produced during the build process.
 $.verbose = true;
 
-await $`STAGE=production ./compile.mjs`;
+await $`STAGE=production ./scripts/compile.mjs`;
 await $`STAGE=production npx webpack`;
