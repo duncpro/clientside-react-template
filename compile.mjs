@@ -7,6 +7,9 @@
 // We'd like to be shown the stdout produced during the build process.
 $.verbose = true;
 
+// Make sure all the dependecies are installed.
+await $`npm install`;
+
 // Compile the TypeScript TSX files to JSX files.
 switch (process.env.STAGE) {
   case "production":
