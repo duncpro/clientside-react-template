@@ -1,0 +1,27 @@
+// The base TSC (TypeScript Compiler) configuration to use in both `development` and `production`
+// STAGEs. To target just the `development` STAGE see `tsconfig.development.json` instead.
+{
+  "compilerOptions": {
+    // We'll use Babel's @babel/plugin-transform-react-jsx to expand JSX expressions into
+    // plain Javascript. Babel seems to be the build tool preferred by the React core team
+    // not TypeScript.
+    // 
+    // The original JSX compiler was a Babel plugin and Facebook's official react-refresh package
+    // ships with a Babel plugin. 
+    "jsx": "preserve",
+
+    // Our React project will live in the `./src` directory.
+    "rootDir": "./src",
+
+    // Webpack will bundle the JSX emitted by TSC from here.
+    "outDir": "./target/tsc",
+
+    // The latest versions of all the popular borwsers support ES6.
+    // https://caniuse.com/es6
+    "target": "es6",
+
+    // We use Node/NPM to handle our dependencies, so tell TypeScript to resolve dependencies
+    // using the same strategy as Node/NPM.
+    "moduleResolution": "node"
+  }
+}

@@ -1,0 +1,4 @@
+// The TSC (TypeScript Compiler) configuration to use when building for the "development" STAGE.
+{
+  "extends": "./tsconfig.json"
+}
