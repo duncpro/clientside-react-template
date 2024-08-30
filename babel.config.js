@@ -33,5 +33,25 @@ module.exports = {
 
     return plugins;
   })(),
+
+  // https://babeljs.io/docs/options#source-map-options
+  inputSourceMap: (() => {
+    switch (process.env.STAGE) {
+      case "development":
+        return true;
+      case "production":
+        return false;
+    }
+  })(),
+
+  // https://babeljs.io/docs/options#source-map-options
+  sourceMaps: (() => {
+    switch (process.env.STAGE) {
+      case "development":
+        return "inline";
+      case "production":
+        return false;
+    }
+  })()
 };
 

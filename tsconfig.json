@@ -18,5 +18,6 @@
     // We use Node/NPM to handle our dependencies, so tell TypeScript to resolve dependencies
     // using the same strategy as Node/NPM.
     "moduleResolution": "node"
-  }
+  },
+  "include": ["./src/**/*"]
 }

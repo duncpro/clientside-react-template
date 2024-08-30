@@ -1,4 +1,9 @@
 // The TSC (TypeScript Compiler) configuration to use when building for the "development" STAGE.
 {
-  "extends": "./tsconfig.json"
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // https://www.typescriptlang.org/tsconfig/#inlineSourceMap
+    "inlineSourceMap": true,
+    "inlineSources": true
+  }
 }

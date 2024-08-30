@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 // This is the bundler (Webpack) configuration file.
 //
 // The bundler's primary responsibility is taking the compiled Javascript file set
@@ -36,13 +38,18 @@ module.exports = {
 
     // Inject the bundled Javascript into ./index.html using Webpack's official HtmlWebpackPlugin.
     plugins.push(new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
+      template: path.join(__dirname, 'index.html'),
     }));
 
     // During development enable Hot Module Replacement via ReactRefreshWebpackPlugin.
     // This Webpack plugin works in tandem with Facebook's Babel plugin `react-refresh/babel`.
     if (process.env.STAGE === 'development')
       plugins.push(new ReactRefreshWebpackPlugin());
+
+    if (process.env.STAGE === 'development')
+      plugins.push(new webpack.SourceMapDevToolPlugin({
+        sourceRoot: '/src'
+      }))
     
     return plugins;
   })(),
@@ -54,11 +61,19 @@ module.exports = {
   // Specify the file and diretory where Webpack will place the bundle it produced.
   output: {
     filename: 'bundle.js', 
-    path: path.resolve(__dirname, 'target/webpack'), 
+    path: path.join(__dirname, 'target/webpack'), 
   },
 
   devServer: {
     // Enable Hot Module Replacement in Webpack's Dev Server.
-    hot: true
-  }
+    hot: true,
+    static: [
+      // The compilation might produce assets which are to be exposed by the
+      // webpack dev server specifically, but nowhere else. Those assets are
+      // written here. For example, the TypeScript sources are placed here so
+      // that the browser debugger can step through them.
+      path.join(__dirname, 'target/webpack-dev-server'),
+      path.join(__dirname, 'public')
+    ],
+  },
 };

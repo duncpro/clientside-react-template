@@ -4,4 +4,4 @@
 $.verbose = true;
 
 await $`rm -r node_modules`;
-
+await $`rm -r target`;

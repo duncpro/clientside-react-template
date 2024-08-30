@@ -12,12 +12,12 @@ $`STAGE=development npx webpack serve --no-stats`;
 // Start a background process which recompiles for every change in the source set.
 // Use `--postpone` to tell watchexec *not* to execute the command immediately, but instead
 // wait until the first file change is detected.
-// Use `--debounce` to allow the text editor 1 second to commit all changes to the source
+// Use `--debounce` to allow the text editor a few seconds to commit all changes to the source
 // directory before attempting recompilation.
 $`watchexec \
   --watch src \
   --postpone \
-  --debounce 1sec \
+  --debounce 2sec \
   STAGE=development ./scripts/compile.mjs`;
 
 
