@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "./scripts/build.mjs",
-    "dev": "./scripts/dev.mjs"
+    "dev": "./scripts/dev.mjs",
+    "clean": "./scripts/clean.mjs"
   }
 }
