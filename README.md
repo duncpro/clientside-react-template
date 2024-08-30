@@ -24,6 +24,7 @@ an all-in-one build tool like Vite or esbuild).
 ## Getting Started
 ```shell
 git clone https://github.com/duncpro/clientside-react-template.git
+cd clientside-react-template
 npm install # You must install dev dependencies before using the build scripts
 npm run dev # Start auto recompilation and webpack dev server
 ```
