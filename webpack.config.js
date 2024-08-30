@@ -48,6 +48,10 @@ module.exports = {
 
     if (process.env.STAGE === 'development')
       plugins.push(new webpack.SourceMapDevToolPlugin({
+        // The URL where the TypeScript source files will be hosted by the
+        // Webpack development server. The browser will expect the files to
+        // to be publicly available on the network here. This is not a filesystem path
+        // it is a URL.
         sourceRoot: '/src'
       }))
     
@@ -72,6 +76,10 @@ module.exports = {
       // webpack dev server specifically, but nowhere else. Those assets are
       // written here. For example, the TypeScript sources are placed here so
       // that the browser debugger can step through them.
+      // 
+      // Files and directories placed here will be made available at the root 
+      // by the Webpack dev server. For example: target/webpack-dev-server/example.txt
+      // will be made avilable at localhost:port/example.txt.
       path.join(__dirname, 'target/webpack-dev-server'),
       path.join(__dirname, 'public')
     ],
