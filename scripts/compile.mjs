@@ -8,7 +8,7 @@
 $.verbose = true;
 
 // Make sure all the dependecies are installed.
-await $`npm install`;
+await $`npm install --silent`;
 
 // Compile the TypeScript TSX files to JSX files.
 switch (process.env.STAGE) {
