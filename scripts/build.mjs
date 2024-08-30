@@ -7,4 +7,4 @@
 $.verbose = true;
 
 await $`STAGE=production ./scripts/compile.mjs`;
-await $`STAGE=production npx webpack`;
+await $`STAGE=production npx webpack --no-stats`;

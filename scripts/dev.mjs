@@ -7,7 +7,7 @@ $.verbose = true;
 await $`STAGE=development ./scripts/compile.mjs`;
 
 // Start the Webpack development server.
-$`STAGE=development npx webpack serve`;
+$`STAGE=development npx webpack serve --no-stats`;
 
 // Start a background process which recompiles for every change in the source set.
 // Use `--postpone` to tell watchexec *not* to execute the command immediately, but instead
